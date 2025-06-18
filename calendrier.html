@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier de Naima</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/calendrier.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale identique à index.html -->
+        <div class="barregauche">
+            <img src="images/Logo.jpg" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" class="menu-link">
+                            <div class="menu-icon">📊</div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="calendrier.html" class="menu-link">
+                            <div class="menu-icon">📅</div>
+                            <div class="menu-text">Schedule</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link">
+                            <div class="menu-icon">📚</div>
+                            <div class="menu-text">Studies</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link">
+                            <div class="menu-icon">❓</div>
+                            <div class="menu-text">Help</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">Logout</div>
+        </div>
+
+        <!-- Main content avec le calendrier -->
+        <main class="main-content">
+            <!-- Header identique à index.html -->
+            <header class="header">
+                <div class="user-info">
+                    <img src="images/etudiante.png" alt="etudiante" class="etudiante">
+                    <span>Hi <br> <strong>Naïma</strong> !</span>
+                </div>
+                <div class="icons">
+                    <span class="notif-icon">🔔</span>
+                    <span class="settings-icon">⚙️</span>
+                </div>
+            </header>
+
+            <!-- Contenu spécifique du calendrier -->
+            <div class="calendar-container white-card">
+                <div class="month-navigation">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="current-month">juin 2025</h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div class="today-marker">Today</div>
+
+                <div class="calendar-grid">
+                    <div class="day-header">Mon</div>
+                    <div class="day-header">Tue</div>
+                    <div class="day-header">Wed</div>
+                    <div class="day-header">Thu</div>
+                    <div class="day-header">Fri</div>
+                    <div class="day-header">Sat</div>
+                    <div class="day-header">Sun</div>
+
+                    <!-- Les jours seront générés par JavaScript -->
+                    <div id="calendar-days" class="calendar-days"></div>
+                </div>
+
+                <div class="events-section">
+                    <h3>Today's Events</h3>
+                    <div id="events-list" class="events-list">
+                        <!-- Les événements seront générés par JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Déplacez le script ici, juste avant </body> -->
+    <script>
+    // Variables d'état pour suivre le mois/année courants
+    let currentYear, currentMonth;
+
+    const eventsData = {
+        "2025-06-16": [
+            { title: "Stellar Physics", location: "Bat. B - Salle 12", time: "9:30 AM → 11:30 AM" },
+            { title: "Stellar Physics", location: "Bat. B - Salle 12", time: "3 PM → 5 PM" }
+        ],
+        "2025-06-17": [
+            { title: "Business Analytics", location: "Bat. B - Salle 12", time: "9:30 AM → 11:30 AM" },
+            { title: "Change Management", location: "Bat. B - Salle 12", time: "2 PM → 4 PM" }
+        ],
+        "2025-06-19": [
+            { title: "General Relativity", location: "Bat. A - Salle 1", time: "10 AM → 12 PM" }
+        ]
+    };
+
+    // Fonction pour générer le calendrier
+    function generateCalendar(year, month) {
+        const calendarDays = document.getElementById('calendar-days');
+        calendarDays.innerHTML = '';
+        
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        
+        document.getElementById('current-month').textContent = 
+            `${firstDay.toLocaleString('fr-FR', { month: 'long' })} ${year}`;
+        
+        for (let i = 0; i < firstDay.getDay(); i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'day other-month';
+            calendarDays.appendChild(emptyDay);
+        }
+        
+        const today = new Date();
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'day current-month';
+            
+            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const isToday = today.getFullYear() === year && 
+                            today.getMonth() === month && 
+                            today.getDate() === day;
+            
+            if (isToday) {
+                dayElement.classList.add('today');
+            }
+            
+            dayElement.innerHTML = `<div class="day-number">${day}</div>`;
+            
+            if (eventsData[dateStr]) {
+                eventsData[dateStr].forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.className = 'event';
+                    eventElement.innerHTML = `
+                        <strong>${event.title}</strong><br>
+                        ${event.location}<br>
+                        ${event.time}
+                    `;
+                    dayElement.appendChild(eventElement);
+                });
+            }
+            
+            calendarDays.appendChild(dayElement);
+        }
+        
+        showTodaysEvents();
+    }
+
+    function showTodaysEvents() {
+        const today = new Date();
+        const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+        const eventsList = document.getElementById('events-list');
+        eventsList.innerHTML = '';
+        
+        if (eventsData[dateStr]) {
+            eventsData[dateStr].forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                eventItem.innerHTML = `
+                    <h4>${event.title}</h4>
+                    <p>${event.location}</p>
+                    <p>${event.time}</p>
+                `;
+                eventsList.appendChild(eventItem);
+            });
+        } else {
+            eventsList.innerHTML = '<p>Aucun événement prévu aujourd\'hui.</p>';
+        }
+    }
+
+    // Gestionnaires de navigation entre mois (version corrigée)
+    document.getElementById('prev-month').addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        generateCalendar(currentYear, currentMonth);
+    });
+
+    document.getElementById('next-month').addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        generateCalendar(currentYear, currentMonth);
+    });
+
+    // Initialisation du calendrier
+    const currentDate = new Date();
+    currentYear = currentDate.getFullYear();
+    currentMonth = currentDate.getMonth();
+    generateCalendar(currentYear, currentMonth);
+</script>
+</body>
+</html>
