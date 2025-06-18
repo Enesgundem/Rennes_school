@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargement</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #7b2cbf;
+            font-family: 'Inter', sans-serif;
+            flex-direction: column;
+        }
+        .logo-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .loading-logo {
+            max-width: 300px; /* Ajustez selon la taille de votre logo */
+            height: auto;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background-color: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background-color: #2563eb;
+            animation: loading 2.5s forwards;
+        }
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+    <img src="images/Logo.jpg" alt="Rennes School of Business" class="loading-logo">
+</div>
+    <div class="loading-bar">
+        <div class="loading-progress"></div>
+    </div>
+
+    <script>
+        // Redirection après 3 secondes
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 3000);
+    </script>
+</body>
+</html>
