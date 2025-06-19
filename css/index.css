@@ -184,9 +184,8 @@ h4{
 }
 .event-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  height: auto; 
+  min-height: 120px;
 }
 
 .event-card:hover img {
@@ -249,4 +248,63 @@ h4{
 
 .map-button:hover {
   background: #1d4ed8;
+}
+
+
+button, .map-button {
+  min-width: 120px;
+  padding: 0.8rem !important;
+  font-size: 1rem;
+}
+
+
+/* ========== VERSION MOBILE (≤768px) ========== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .barregauche {
+    width: 100%;
+    flex-direction: row;
+    padding: 0.5rem;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .logo {
+    width: 40px;
+    margin-right: 1rem;
+  }
+
+  .barregauche nav ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .barregauche nav li {
+    padding: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .menu-text {
+    display: none; /* Cache le texte pour gagner de l'espace */
+  }
+
+  .logout {
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr !important; /* 1 colonne sur mobile */
+  }
+
+  .event-card {
+    height: 120px !important; /* Réduit la hauteur des cartes */
+  }
+
+  .user-info span {
+    font-size: 0.9rem; /* Texte plus petit */
+  }
 }
