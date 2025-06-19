@@ -94,6 +94,7 @@
     <script>
     // Variables d'état pour suivre le mois/année courants
     let currentYear, currentMonth;
+    let touchStartX = 0;
 
     const eventsData = {
         "2025-06-16": [
@@ -109,7 +110,7 @@
         ]
     };
 
-    // Fonction pour générer le calendrier
+    // Fonction principale pour générer le calendrier
     function generateCalendar(year, month) {
         const calendarDays = document.getElementById('calendar-days');
         calendarDays.innerHTML = '';
@@ -121,12 +122,14 @@
         document.getElementById('current-month').textContent = 
             `${firstDay.toLocaleString('fr-FR', { month: 'long' })} ${year}`;
         
+        // Jours vides en début de mois
         for (let i = 0; i < firstDay.getDay(); i++) {
             const emptyDay = document.createElement('div');
             emptyDay.className = 'day other-month';
             calendarDays.appendChild(emptyDay);
         }
         
+        // Jours du mois
         const today = new Date();
         for (let day = 1; day <= daysInMonth; day++) {
             const dayElement = document.createElement('div');
@@ -134,8 +137,8 @@
             
             const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             const isToday = today.getFullYear() === year && 
-                            today.getMonth() === month && 
-                            today.getDate() === day;
+                          today.getMonth() === month && 
+                          today.getDate() === day;
             
             if (isToday) {
                 dayElement.classList.add('today');
@@ -143,18 +146,33 @@
             
             dayElement.innerHTML = `<div class="day-number">${day}</div>`;
             
+            // Affichage conditionnel des événements
             if (eventsData[dateStr]) {
-                eventsData[dateStr].forEach(event => {
-                    const eventElement = document.createElement('div');
-                    eventElement.className = 'event';
-                    eventElement.innerHTML = `
-                        <strong>${event.title}</strong><br>
-                        ${event.location}<br>
-                        ${event.time}
-                    `;
-                    dayElement.appendChild(eventElement);
-                });
+                if (window.innerWidth > 768) { // Version desktop
+                    eventsData[dateStr].forEach(event => {
+                        const eventElement = document.createElement('div');
+                        eventElement.className = 'event';
+                        eventElement.innerHTML = `
+                            <strong>${event.title}</strong><br>
+                            ${event.location}<br>
+                            ${event.time}
+                        `;
+                        dayElement.appendChild(eventElement);
+                    });
+                } else { // Version mobile
+                    const eventDot = document.createElement('div');
+                    eventDot.className = 'event-dot';
+                    eventDot.innerHTML = '•';
+                    dayElement.appendChild(eventDot);
+                }
             }
+            
+            // Gestion du clic sur un jour
+            dayElement.addEventListener('click', () => {
+                if (window.innerWidth <= 768 || dayElement.classList.contains('other-month')) {
+                    showEventsForDate(dateStr);
+                }
+            });
             
             calendarDays.appendChild(dayElement);
         }
@@ -162,11 +180,10 @@
         showTodaysEvents();
     }
 
-    function showTodaysEvents() {
-        const today = new Date();
-        const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    // Affiche les événements pour une date spécifique
+    function showEventsForDate(dateStr) {
         const eventsList = document.getElementById('events-list');
-        eventsList.innerHTML = '';
+        eventsList.innerHTML = '<h3>Événements</h3>';
         
         if (eventsData[dateStr]) {
             eventsData[dateStr].forEach(event => {
@@ -180,11 +197,23 @@
                 eventsList.appendChild(eventItem);
             });
         } else {
-            eventsList.innerHTML = '<p>Aucun événement prévu aujourd\'hui.</p>';
+            eventsList.innerHTML = '<p>Aucun événement prévu ce jour.</p>';
+        }
+        
+        // Scroll vers la section événements sur mobile
+        if (window.innerWidth <= 768) {
+            document.querySelector('.events-section').scrollIntoView({ behavior: 'smooth' });
         }
     }
 
-    // Gestionnaires de navigation entre mois (version corrigée)
+    // Affiche les événements du jour actuel
+    function showTodaysEvents() {
+        const today = new Date();
+        const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+        showEventsForDate(dateStr);
+    }
+
+    // Navigation entre mois
     document.getElementById('prev-month').addEventListener('click', () => {
         currentMonth--;
         if (currentMonth < 0) {
@@ -203,11 +232,34 @@
         generateCalendar(currentYear, currentMonth);
     });
 
-    // Initialisation du calendrier
+    // Navigation par swipe sur mobile
+    document.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const diffX = touchStartX - touchEndX;
+        
+        if (Math.abs(diffX) > 50) { // Seuil de swipe
+            if (diffX > 0) {
+                document.getElementById('next-month').click(); // Swipe gauche
+            } else {
+                document.getElementById('prev-month').click(); // Swipe droit
+            }
+        }
+    });
+
+    // Initialisation
     const currentDate = new Date();
     currentYear = currentDate.getFullYear();
     currentMonth = currentDate.getMonth();
     generateCalendar(currentYear, currentMonth);
+
+    // Réagir au redimensionnement
+    window.addEventListener('resize', () => {
+        generateCalendar(currentYear, currentMonth);
+    });
 </script>
 </body>
 </html>
