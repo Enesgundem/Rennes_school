@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Rennes School</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale identique -->
+        <div class="barregauche">
+            <img src="images/Logo.jpg" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="accueil.html" class="menu-link">
+                            <div class="menu-icon">📊</div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendrier.html" class="menu-link">
+                            <div class="menu-icon">📅</div>
+                            <div class="menu-text">Schedule</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="studies.html" class="menu-link">
+                            <div class="menu-icon">📚</div>
+                            <div class="menu-text">Studies</div>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="help.html" class="menu-link">
+                            <div class="menu-icon">❓</div>
+                            <div class="menu-text">Help</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">Logout</div>
+        </div>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <img src="images/etudiante.png" alt="etudiante" class="etudiante">
+                    <span>Hi <br> <strong>Naïma</strong> !</span>
+                </div>
+                <div class="icons">
+                    <a href="notif.html" class="menu-link">
+                        <span class="notif-icon">🔔</span>
+                    </a>
+                    <a href="parametre.html" class="menu-link">
+                        <span class="settings-icon">⚙️</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Section Aide -->
+            <div class="help-container white-card">
+                <h2>Student Help Center</h2>
+                
+                <!-- FAQ -->
+                <div class="help-section">
+                    <div class="section-header">
+                        <span class="section-icon">❓</span>
+                        <h3>FAQ</h3>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Comment accéder à mes cours ?</div>
+                        <div class="faq-answer">Tous les cours sont disponibles sur la plateforme dans la rubrique « Études ».</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Comment soumettre un devoir ?</div>
+                        <div class="faq-answer">Accédez à la page du cours spécifique et utilisez le formulaire de soumission.</div>
+                    </div>
+                    <button class="help-button">View all FAQs</button>
+                </div>
+
+                <!-- Contacts -->
+                <div class="help-section">
+                    <div class="section-header">
+                        <span class="section-icon">📞</span>
+                        <h3>Emergency Contacts</h3>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">Numéro du campus</span>
+                        <span class="contact-number">02 99 84 55 55</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">Numéro d'urgence</span>
+                        <span class="contact-number">15</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-name">Numéro du support</span>
+                        <span class="contact-number">helpdesk@rennes-school.com</span>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="help-section">
+                    <div class="section-header">
+                        <span class="section-icon">🏫</span>
+                        <h3>University Services</h3>
+                    </div>
+                    <div class="service-card">
+                        <h4>Library</h4>
+                        <p>Ouvert Lundi to Vendredi, 8h30 - 19h00</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Cafeteria</h4>
+                        <p>Ouvert Lundi to Vendredi, 11h30 - 14h30 </p>
+                    </div>
+                </div>
+
+                <!-- Carte interactive -->
+                <div class="help-section">
+                    <div class="section-header">
+                        <span class="section-icon">🗺️</span>
+                        <h3>Interactive Campus Guide</h3>
+                    </div>
+                    <div class="map-container">
+                        <img src="images/map.jpg" alt="Campus Map" class="campus-map">
+                        <div class="map-legend">
+                            <div class="legend-item"><span class="color-box" style="background: #2563eb;"></span> Academic Buildings</div>
+                            <div class="legend-item"><span class="color-box" style="background: #10b981;"></span> Services</div>
+                        </div>
+                    </div>
+                    <button class="help-button">View Full Map</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

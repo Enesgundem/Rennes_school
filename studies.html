@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studies - Rennes School</title>
+    <link rel="stylesheet" href="css/index.css"> <!-- Même CSS que votre page principale -->
+    <link rel="stylesheet" href="css/studies.css"> <!-- CSS spécifique -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale identique -->
+        <div class="barregauche">
+            <img src="images/Logo.jpg" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" class="menu-link">
+                            <div class="menu-icon">📊</div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendrier.html" class="menu-link">
+                            <div class="menu-icon">📅</div>
+                            <div class="menu-text">Schedule</div>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="studies.html" class="menu-link">
+                            <div class="menu-icon">📚</div>
+                            <div class="menu-text">Studies</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="help.html" class="menu-link">
+                            <div class="menu-icon">❓</div>
+                            <div class="menu-text">Help</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">Logout</div>
+        </div>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <img src="images/etudiante.png" alt="etudiante" class="etudiante">
+                    <span>Hi <br> <strong>Naïma</strong> !</span>
+                </div>
+                <div class="icons">
+                    <a href="notif.html" class="menu-link">
+                        <span class="notif-icon">🔔</span>
+                    </a>
+                    <a href="parametre.html" class="menu-link">
+                        <span class="settings-icon">⚙️</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Section Études -->
+            <div class="studies-container white-card">
+                <h2>My Academic Progress</h2>
+                
+                <!-- Filtres -->
+                <div class="filters">
+                    <button class="filter-btn active">All Subjects</button>
+                    <button class="filter-btn">Current Semester</button>
+                    <button class="filter-btn">Past Courses</button>
+                </div>
+
+                <!-- Cartes des matières -->
+                <div class="subject-grid">
+                    <!-- Carte 1 -->
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3>Stellar Physics</h3>
+                            <span class="subject-grade">A-</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 78%"></div>
+                            <span>78% Completed</span>
+                        </div>
+                        <div class="deadlines">
+                            <h4>Upcoming Deadlines:</h4>
+                            <ul>
+                                <li>
+                                    <span class="deadline-date">15/04</span>
+                                    <span class="deadline-title">Final Project Submission</span>
+                                </li>
+                                <li>
+                                    <span class="deadline-date">16/06</span>
+                                    <span class="deadline-title">Final Exam</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="resources-btn">View Resources</button>
+                    </div>
+
+                    <!-- Carte 2 -->
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3>Business Analytics</h3>
+                            <span class="subject-grade">B+</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%"></div>
+                            <span>65% Completed</span>
+                        </div>
+                        <div class="deadlines">
+                            <h4>Upcoming Deadlines:</h4>
+                            <ul>
+                                <li>
+                                    <span class="deadline-date">16/06</span>
+                                    <span class="deadline-title">Case Study Analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="resources-btn">View Resources</button>
+                    </div>
+
+                    <!-- Carte 3 -->
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3>Change Management</h3>
+                            <span class="subject-grade">B</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%"></div>
+                            <span>60% Completed</span>
+                        </div>
+                        <div class="deadlines">
+                            <h4>Upcoming Deadlines:</h4>
+                            <ul>
+                                <li>
+                                    <span class="deadline-date">17/06</span>
+                                    <span class="deadline-title">Case Study Analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="resources-btn">View Resources</button>
+                    </div>
+
+                    <!-- Carte 4 -->
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <h3>General Relativity</h3>
+                            <span class="subject-grade">C+</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%"></div>
+                            <span>55% Completed</span>
+                        </div>
+                        <div class="deadlines">
+                            <h4>Upcoming Deadlines:</h4>
+                            <ul>
+                                <li>
+                                    <span class="deadline-date">19/06</span>
+                                    <span class="deadline-title">Case Study Analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="resources-btn">View Resources</button>
+                    </div>
+                </div>
+
+                <!-- Notes détaillées -->
+                <div class="grades-section white-card">
+                    <h3>Detailed Grades</h3>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Assignment</th>
+                                <th>Grade</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stellar Physics</td>
+                                <td>Midterm Exam</td>
+                                <td class="grade-A">A</td>
+                                <td>16/06/2025</td>
+                            </tr>
+                            <tr>
+                                <td>Business Analytics</td>
+                                <td>Group Project</td>
+                                <td class="grade-B">B+</td>
+                                <td>17/06/2025</td>
+                            </tr>
+                            <tr>
+                                <td>Change Management</td>
+                                <td>Group Project</td>
+                                <td class="grade-B">B</td>
+                                <td>17/06/2025</td>
+                            </tr>
+                            <tr>
+                                <td>General Relativity</td>
+                                <td>Group Project</td>
+                                <td class="grade-C">C+</td>
+                                <td>19/06/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/studies.js"></script>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtrage des matières
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Retire la classe active de tous les boutons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Ajoute la classe active au bouton cliqué
+            this.classList.add('active');
+            
+            // Ici vous pourriez ajouter la logique pour filtrer les matières
+            console.log(`Filter: ${this.textContent}`);
+        });
+    });
+    
+    // Simulation de chargement des données
+    console.log("Studies page loaded");
+});
+</script>
+</html>

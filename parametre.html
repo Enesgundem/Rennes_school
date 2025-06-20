@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Rennes School</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/parametre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale identique -->
+        <div class="barregauche">
+            <img src="images/Logo.jpg" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" class="menu-link">
+                            <div class="menu-icon">📊</div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendrier.html" class="menu-link">
+                            <div class="menu-icon">📅</div>
+                            <div class="menu-text">Schedule</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="studies.html" class="menu-link">
+                            <div class="menu-icon">📚</div>
+                            <div class="menu-text">Studies</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="help.html" class="menu-link">
+                            <div class="menu-icon">❓</div>
+                            <div class="menu-text">Help</div>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="profile.html" class="menu-link">
+                            <div class="menu-icon">👤</div>
+                            <div class="menu-text">Profile</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">Logout</div>
+        </div>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <img src="images/etudiante.png" alt="etudiante" class="etudiante">
+                    <span>Hi <br> <strong>Naïma</strong> !</span>
+                </div>
+                <div class="icons">
+                    <a href="notif.html" class="menu-link">
+                        <span class="notif-icon">🔔</span>
+                    </a>
+                    <a href="parametre.html" class="menu-link">
+                        <span class="settings-icon">⚙️</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Section Profil -->
+            <div class="profile-container white-card">
+                <h2>Student Profile</h2>
+                
+                <!-- Informations personnelles -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <span class="section-icon">👤</span>
+                        <h3>Personal Information</h3>
+                    </div>
+                    <div class="profile-grid">
+                        <div class="info-item">
+                            <span class="info-label">Nom/Prenom</span>
+                            <span class="info-value">Naïma Benali</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">ID étudiant(e)</span>
+                            <span class="info-value">284216</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">n.benali@rennes-school.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Numéro de téléphone</span>
+                            <span class="info-value">+33 6 12 34 56 78</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Address</span>
+                            <span class="info-value">15 Rue de Rennes, 35000</span>
+                        </div>
+                    </div>
+                    <button class="profile-button">Edit Information</button>
+                </div>
+
+                <!-- Programme académique -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <span class="section-icon">🎓</span>
+                        <h3>Academic Program</h3>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h4>Master in Business Analytics</h4>
+                            <span class="program-year">2025-2026</span>
+                        </div>
+                        <div class="program-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Faculty</span>
+                                <span class="detail-value">School of Business</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Advisor</span>
+                                <span class="detail-value">Prof. Martin Dupont</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Credits</span>
+                                <span class="detail-value">120€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte étudiante -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <span class="section-icon">💳</span>
+                        <h3>Student Card</h3>
+                    </div>
+                    <div class="student-card">
+                        <div class="card-header">
+                            <img src="images/Logo.jpg" alt="School Logo" class="card-logo">
+                            <span class="card-title">Rennes School of Business</span>
+                        </div>
+                        <div class="card-body">
+                            <img src="images/etudiante.png" alt="Student Photo" class="card-photo">
+                            <div class="card-info">
+                                <span class="card-name">Naïma Benali</span>
+                                <span class="card-id">ID: RSB2025</span>
+                                <span class="card-valid">Valid until: 06/2025</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <img src="images/barcode.png" alt="School Logo" class="codebare">
+                        </div>
+                    </div>
+                    <button class="profile-button">Download Digital Card</button>
+                </div>
+
+                <!-- Paramètres du compte -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <span class="section-icon">⚙️</span>
+                        <h3>Account Settings</h3>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <span>Change Password</span>
+                            <button class="setting-button">Modify</button>
+                        </div>
+                        <div class="setting-item">
+                            <span>Notification Preferences</span>
+                            <button class="setting-button">Configure</button>
+                        </div>
+                        <div class="setting-item">
+                            <span>Privacy Settings</span>
+                            <button class="setting-button">Adjust</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
