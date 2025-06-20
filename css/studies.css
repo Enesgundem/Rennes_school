@@ -1,0 +1,249 @@
+/* studies.css - Version complète avec responsive */
+.studies-container {
+    padding: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.subject-grade {
+    background: #2563eb;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.progress-container {
+    margin: 1.5rem 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #2563eb;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.deadlines ul {
+    list-style: none;
+    padding: 0;
+}
+
+.deadlines li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.deadline-date {
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.resources-btn {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.resources-btn:hover {
+    background: #e5e7eb;
+}
+
+.grades-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.grades-table th, .grades-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.grades-table th {
+    background: #f9fafb;
+}
+
+.grade-A {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.grade-B {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.grade-C {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* ========== VERSION MOBILE ========== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .barregauche {
+        width: 100%;
+        flex-direction: row;
+        padding: 0.5rem;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+        width: 40px;
+        margin-right: 1rem;
+    }
+
+    .barregauche nav ul {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .barregauche nav li {
+        padding: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .logout {
+        margin-top: 0;
+        margin-left: auto;
+    }
+
+    /* Styles spécifiques à la page Studies */
+    .studies-container {
+        padding: 1rem;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .subject-card {
+        padding: 1rem;
+    }
+
+    .subject-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .grades-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .deadlines li {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .deadline-date {
+        min-width: unset;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .icons {
+        order: 1;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 400px) {
+    .filter-btn {
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .grades-table th, 
+    .grades-table td {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.85rem;
+    }
+
+    .subject-card {
+        padding: 0.8rem;
+    }
+}

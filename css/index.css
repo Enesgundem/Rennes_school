@@ -11,7 +11,8 @@ body {
 }
 
 .barregauche {
-  width: 220px;
+  width: 15%;
+  margin-bottom: 2rem;
   background-color: #fff;
   border-right: 1px solid #e5e7eb;
   display: flex;
@@ -20,10 +21,6 @@ body {
   padding: 1rem;
 }
 
-.barregauche {
-  width: 15%;
-  margin-bottom: 2rem;
-}
 
 .logo {
   width: 50%;
@@ -46,8 +43,8 @@ body {
   text-align: center;
 }
 .menu-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .menu-text {
@@ -118,6 +115,19 @@ body {
 .icons span {
   margin-left: 1rem;
   cursor: pointer;
+}
+
+/* Ajoutez ceci près des autres règles .icons */
+.notif-icon, 
+.settings-icon {
+  font-size: 1.5rem; /* Taille augmentée */
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.notif-icon:hover,
+.settings-icon:hover {
+  transform: scale(1.1);
 }
 
 .dashboard {

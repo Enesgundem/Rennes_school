@@ -1,0 +1,153 @@
+/* Styles spécifiques à la page Help */
+.help-container {
+    padding: 2rem;
+}
+
+.help-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    font-size: 1.8rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.faq-question {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2563eb;
+}
+
+.faq-answer {
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background: #f9fafb;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.contact-name {
+    font-weight: 500;
+}
+
+.contact-number {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.service-card {
+    padding: 1rem;
+    background: #f9fafb;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+}
+
+.service-card h4 {
+    margin: 0 0 0.3rem 0;
+    color: #1f2937;
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.map-container {
+    margin-top: 1rem;
+}
+
+.campus-map {
+    width: 60%;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.map-legend {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.help-button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.help-button:hover {
+    background: #1d4ed8;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .help-container {
+        padding: 1rem;
+    }
+
+    .section-header {
+        gap: 0.8rem;
+    }
+
+    .section-icon {
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .map-legend {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .help-button {
+        padding: 0.7rem;
+    }
+}

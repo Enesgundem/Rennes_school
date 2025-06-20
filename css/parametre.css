@@ -1,0 +1,253 @@
+/* Styles spécifiques à la page Profile */
+.profile-container {
+    padding: 2rem;
+}
+
+.profile-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    font-size: 1.8rem;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.3rem;
+}
+
+.info-value {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.program-card {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.program-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.program-header h4 {
+    margin: 0;
+    color: #2563eb;
+}
+
+.program-year {
+    background: #2563eb;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.program-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.3rem;
+}
+
+.detail-value {
+    font-weight: 500;
+}
+
+.student-card {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-id, .card-valid {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-barcode {
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.settings-list {
+    background: #f9fafb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-button {
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.setting-button:hover {
+    background: #1e40af;
+}
+
+.codebare{
+    width: 100%;
+    max-width: 25%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+.profile-button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.profile-button:hover {
+    background: #1d4ed8;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 1rem;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-details {
+        grid-template-columns: 1fr;
+    }
+
+    .card-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .section-header {
+        gap: 0.8rem;
+    }
+
+    .section-icon {
+        font-size: 1.5rem;
+    }
+
+    .profile-button, .setting-button {
+        padding: 0.7rem;
+    }
+}
