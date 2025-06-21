@@ -73,14 +73,6 @@ body {
   margin-bottom: 1.5rem; /* Marge externe */
   border: 1px solid #e5e7eb; /* Bordure subtile (optionnel) */
 }
-.white-card-date2 {
-  background: rgb(189, 187, 187);
-  border-radius: 12px; /* Coins arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  padding: 1.5rem; /* Espace intérieur */
-  margin-bottom: 1.5rem; /* Marge externe */
-  border: 1px solid #e5e7eb; /* Bordure subtile (optionnel) */
-}
 
 .logout {
   margin-top: auto;

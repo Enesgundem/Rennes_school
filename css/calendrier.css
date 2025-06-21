@@ -223,18 +223,6 @@ body {
   color: var(--text-light);
 }
 
-/* ========== CANCELLED EVENTS ========== */
-.event.cancelled, 
-.event-item.cancelled {
-  background: #fee2e2;
-  border-left-color: var(--danger);
-}
-
-.cancelled-text {
-  color: var(--danger);
-  font-weight: bold;
-}
-
 /* ========== MOBILE VERSION ========== */
 @media (max-width: 768px) {
   .container {

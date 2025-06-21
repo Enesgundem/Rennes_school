@@ -1,0 +1,346 @@
+/* Styles spécifiques à la messagerie */
+.messaging-container {
+    padding: 0;
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+}
+
+.messaging-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-message-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.messaging-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.conversation-list {
+    width: 300px;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+}
+
+.search-bar {
+    padding: 1rem;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.conversation {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.conversation.active {
+    background: #f3f4f6;
+}
+
+.conversation:hover:not(.active) {
+    background: #f9fafb;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.conversation-details {
+    flex: 1;
+    position: relative;
+}
+
+.conversation-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.time {
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.last-message {
+    color: #6b7280;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.3rem;
+    width: 180px;
+}
+
+.unread-badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversation-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.conversation-view .conversation-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.recipient-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.conversation-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.conversation-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 1rem;
+    max-width: 70%;
+}
+
+.message.received {
+    align-self: flex-start;
+}
+
+.message.sent {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.received .message-content {
+    background: white;
+    border: 1px solid #e5e7eb;
+}
+
+.sent .message-content {
+    background: #2563eb;
+    color: white;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    align-self: flex-end;
+    margin: 0 0.5rem;
+}
+
+.sent .message-time {
+    color: #a5b4fc;
+}
+
+.attachments {
+    margin-top: 0.5rem;
+}
+
+.file-attachment {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.received .file-attachment {
+    background: #f3f4f6;
+}
+
+.message-input {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+
+.input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+}
+
+.attach-btn, .send-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.send-btn {
+    color: #2563eb;
+}
+
+.shared-files {
+    width: 250px;
+    border-left: 1px solid #e5e7eb;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.shared-files h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    background: #e5e7eb;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.file {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    align-items: center;
+}
+
+.file i {
+    font-size: 1.5rem;
+    color: #6b7280;
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-name {
+    font-weight: 500;
+}
+
+.file-meta {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.view-all {
+    width: 100%;
+    margin-top: 1rem;
+    background: none;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .shared-files {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .conversation-list {
+        width: 100%;
+    }
+    
+    .conversation-view {
+        display: none;
+    }
+    
+    .conversation-list.active {
+        display: none;
+    }
+    
+    .conversation-view.active {
+        display: flex;
+    }
+}
