@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie - Rennes School</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/notif.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale identique -->
+        <div class="barregauche">
+            <img src="images/Logo.jpg" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="accueil.html" class="menu-link">
+                            <div class="menu-icon">📊</div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendrier.html" class="menu-link">
+                            <div class="menu-icon">📅</div>
+                            <div class="menu-text">Schedule</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="studies.html" class="menu-link">
+                            <div class="menu-icon">📚</div>
+                            <div class="menu-text">Studies</div>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="help.html" class="menu-link">
+                        <div class="menu-icon">❓</div>
+                        <div class="menu-text">Help</div>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="logout">Logout</div>
+        </div>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <header class="header">
+                <div class="user-info">
+                    <img src="images/etudiante.png" alt="etudiante" class="etudiante">
+                    <span>Hi <br> <strong>Naïma</strong> !</span>
+                </div>
+                <div class="icons">
+                    <a href="notif.html" class="menu-link">
+                        <span class="notif-icon">🔔</span>
+                        <span class="notification-badge"></span>
+                    </a>
+                    <a href="parametre.html" class="menu-link">
+                        <span class="settings-icon">⚙️</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Section Messagerie -->
+            <div class="messaging-container white-card">
+                <div class="messaging-header">
+                    <h2>Messagerie</h2>
+                    <button class="new-message-btn">
+                        <i class="fas fa-plus"></i> Nouveau message
+                    </button>
+                </div>
+
+                <div class="messaging-layout">
+                    <!-- Liste des conversations -->
+                    <div class="conversation-list">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Rechercher...">
+                            <i class="fas fa-search"></i>
+                        </div>
+
+                        <div class="conversation active">
+                            <div class="avatar">PR</div>
+                            <div class="conversation-details">
+                                <div class="conversation-header">
+                                    <span class="name">Prof. Rodriguez</span>
+                                    <span class="time">10:30</span>
+                                </div>
+                                <p class="last-message">Votre projet a été approuvé...</p>
+                                <span class="unread-badge">2</span>
+                            </div>
+                        </div>
+
+                        <div class="conversation">
+                            <div class="avatar">AD</div>
+                            <div class="conversation-details">
+                                <div class="conversation-header">
+                                    <span class="name">Admin Direction</span>
+                                    <span class="time">Hier</span>
+                                </div>
+                                <p class="last-message">Rappel: réunion demain...</p>
+                            </div>
+                        </div>
+
+                        <div class="conversation">
+                            <div class="avatar">GL</div>
+                            <div class="conversation-details">
+                                <div class="conversation-header">
+                                    <span class="name">Groupe Physique</span>
+                                    <span class="time">Lun</span>
+                                </div>
+                                <p class="last-message">Jean: J'ai uploadé les notes...</p>
+                                <span class="unread-badge">5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zone de conversation -->
+                    <div class="conversation-view">
+                        <div class="conversation-header">
+                            <div class="recipient-info">
+                                <div class="avatar">PR</div>
+                                <div>
+                                    <h3>Prof. Rodriguez</h3>
+                                    <p>Physique Stellaire</p>
+                                </div>
+                            </div>
+                            <div class="conversation-actions">
+                                <button><i class="fas fa-paperclip"></i></button>
+                                <button><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="messages-container">
+                            <!-- Messages reçus -->
+                            <div class="message received">
+                                <div class="message-content">
+                                    <p>Bonjour Naima, votre projet a été approuvé avec quelques modifications mineures.</p>
+                                    <div class="attachments">
+                                        <div class="file-attachment">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span>Feedback_Projet.pdf</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message-time">10:30</div>
+                            </div>
+
+                            <!-- Messages envoyés -->
+                            <div class="message sent">
+                                <div class="message-content">
+                                    <p>Merci professeur, je vais corriger cela avant vendredi.</p>
+                                </div>
+                                <div class="message-time">10:35</div>
+                            </div>
+                        </div>
+
+                        <div class="message-input">
+                            <div class="input-container">
+                                <button class="attach-btn"><i class="fas fa-paperclip"></i></button>
+                                <input type="text" placeholder="Écrivez un message...">
+                                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fichiers partagés (sidebar) -->
+                    <div class="shared-files">
+                        <h3>Fichiers partagés <span class="badge">12</span></h3>
+                        <div class="file">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="file-info">
+                                <span class="file-name">Syllabus_Physique.pdf</span>
+                                <span class="file-meta">2.4 MB · Prof. Rodriguez</span>
+                            </div>
+                        </div>
+                        <div class="file">
+                            <i class="fas fa-file-excel"></i>
+                            <div class="file-info">
+                                <span class="file-name">Notes_Groupe.xlsx</span>
+                                <span class="file-meta">1.1 MB · Groupe Physique</span>
+                            </div>
+                        </div>
+                        <button class="view-all">Voir tous les fichiers</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Gestion des conversations
+    const conversations = document.querySelectorAll('.conversation');
+    
+    conversations.forEach(conv => {
+        conv.addEventListener('click', function() {
+            // Retire la classe active de toutes les conversations
+            conversations.forEach(c => c.classList.remove('active'));
+            // Ajoute la classe active à la conversation cliquée
+            this.classList.add('active');
+            
+            // Ici vous pourriez charger les messages via AJAX
+            console.log(`Conversation sélectionnée: ${this.querySelector('.name').textContent}`);
+        });
+    });
+    
+    // Gestion de l'envoi de message
+    const messageInput = document.querySelector('.message-input input');
+    const sendBtn = document.querySelector('.send-btn');
+    
+    function sendMessage() {
+        const message = messageInput.value.trim();
+        if (message) {
+            console.log(`Message envoyé: ${message}`);
+            // Ici vous ajouteriez le message à l'interface et l'enverriez au serveur
+            messageInput.value = '';
+        }
+    }
+    
+    sendBtn.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+    
+    // Simulation de notifications
+    console.log("Vous avez 3 nouvelles notifications");
+});
+    </script>
+</body>
+</html>
