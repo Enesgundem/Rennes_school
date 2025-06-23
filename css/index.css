@@ -58,10 +58,9 @@ body {
 
 .white-card {
   background: white;
-  border-radius: 12px; /* Coins arrondis */
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
   padding: 1.5rem; /* Espace intérieur */
-  margin-bottom: 1.5rem; /* Marge externe */
   border: 1px solid #e5e7eb; /* Bordure subtile (optionnel) */
 }
 
@@ -69,8 +68,7 @@ body {
   background: rgb(234, 232, 232);
   border-radius: 12px; /* Coins arrondis */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
-  padding: 1.5rem; /* Espace intérieur */
-  margin-bottom: 1.5rem; /* Marge externe */
+  padding: 1.1rem; /* Espace intérieur */
   border: 1px solid #e5e7eb; /* Bordure subtile (optionnel) */
 }
 
@@ -95,13 +93,14 @@ body {
 .user-info {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  margin-bottom: 1rem
 }
 
 .etudiante {
   width: 55px;
   height: 40px;
   border-radius: 40%;
+
 }
 
 .icons span {
